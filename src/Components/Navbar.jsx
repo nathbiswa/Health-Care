@@ -25,7 +25,7 @@ export default function Navbar() {
                         height={38}
                     />
                     <span className="text-xl font-bold">
-                        <span className="text-primary">Healt</span>
+                        <span className="text-blue-600">Healt</span>
                         <span className="text-secondary">Care</span>
                     </span>
                 </Link>

@@ -14,7 +14,7 @@ const GlobalCard = ({ doc }) => {
                 alt={doc.name}
                 width={500}
                 height={400}
-                className="w-full h-48 object-cover rounded-lg"
+                className="w-full object-cover rounded-lg"
             />
 
             <div className="mt-4">
@@ -31,7 +31,7 @@ const GlobalCard = ({ doc }) => {
                 <div className=" flex justify-between text-sm mt-2 text-gray-600">
                     <div className='flex items-center'> <span className='text-md font-bold'>Fee:</span>  <div className='flex items-center'><TbCurrencyTaka />{doc.fee}</div></div>
                     <Link href={'doc-details'}>
-                        <Button className={'bg-[#2563EB]'}>View Details</Button>
+                        <Button className={'bg-secondary'}>View Details</Button>
                     </Link>
                 </div>
             </div>
