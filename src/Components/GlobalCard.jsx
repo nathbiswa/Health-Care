@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { TbCurrencyTaka } from 'react-icons/tb';
 
 const GlobalCard = ({ doc }) => {
+    console.log("From doctor details", doc)
     return (
 
         <Card
@@ -32,7 +33,7 @@ const GlobalCard = ({ doc }) => {
 
                 <div className=" flex justify-between text-sm mt-2 text-gray-600">
                     <div className='flex items-center'> <span className='text-md font-bold'>Fee:</span>  <div className='flex items-center'><TbCurrencyTaka />{doc.fee}</div></div>
-                    <Link href={'doc-details'}>
+                    <Link href={`/appointments/${doc._id}`} >
                         <Button className={'bg-secondary'}>View Details</Button>
                     </Link>
                 </div>

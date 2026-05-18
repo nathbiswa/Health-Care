@@ -4,17 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { authClient } from "@/lib/auth-client";
 import { Avatar } from "@heroui/react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
 
-
-    const {
-        data: session,
-    } = authClient.useSession()
-
+    const { data: session } = authClient.useSession();
     const user = session?.user;
-    // console.log("From navbar", user);
 
+    const [isOpen, setIsOpen] = useState(false);
 
     const handeleLogOut = async () => {
         await authClient.signOut();
@@ -38,7 +36,7 @@ export default function Navbar() {
                     </span>
                 </Link>
 
-                {/* Nav Links */}
+                {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-6 font-medium text-gray-700">
                     <Link href="/" className="hover:text-primary transition">
                         Home
@@ -51,8 +49,8 @@ export default function Navbar() {
                     </Link>
                 </div>
 
-                {/* Right Side */}
-                <div className="flex items-center gap-3">
+                {/* Right Side (Desktop) */}
+                <div className="hidden md:flex items-center gap-3">
                     {!user ? (
                         <>
                             <Link
@@ -69,10 +67,9 @@ export default function Navbar() {
                             </Link>
                         </>
                     ) : (
-
                         <div className="flex items-center gap-3">
                             <Avatar>
-                                <Avatar.Image alt="John Doe" src={user?.image} />
+                                <Avatar.Image alt="User" src={user?.image} />
                                 <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
                             </Avatar>
                             <button
@@ -84,7 +81,64 @@ export default function Navbar() {
                         </div>
                     )}
                 </div>
+
+                {/* Mobile Toggle Button */}
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden"
+                >
+                    {isOpen ? <X size={28} /> : <Menu size={28} />}
+                </button>
             </div>
+
+            {/* Mobile Menu */}
+            {isOpen && (
+                <div className="md:hidden px-6 pb-4 space-y-4 bg-white border-t animate-slideDown">
+
+                    <Link href="/" className="block hover:text-primary">
+                        Home
+                    </Link>
+                    <Link href="/appointments" className="block hover:text-primary">
+                        All Appointment
+                    </Link>
+                    <Link href="/dashboard" className="block hover:text-primary">
+                        Dashboard
+                    </Link>
+
+                    {!user ? (
+                        <>
+                            <Link
+                                href="/login"
+                                className="block px-4 py-2 border border-primary text-primary rounded text-center"
+                            >
+                                Login
+                            </Link>
+                            <Link
+                                href="/register"
+                                className="block px-4 py-2 bg-secondary text-white rounded text-center"
+                            >
+                                Register
+                            </Link>
+                        </>
+                    ) : (
+                        <div className="flex flex-col gap-3">
+                            <div className="flex items-center gap-3">
+                                <Avatar>
+                                    <Avatar.Image alt="User" src={user?.image} />
+                                    <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
+                                </Avatar>
+                                <span>{user.name}</span>
+                            </div>
+                            <button
+                                onClick={handeleLogOut}
+                                className="px-3 py-2 bg-red-500 text-white rounded"
+                            >
+                                Logout
+                            </button>
+                        </div>
+                    )}
+                </div>
+            )}
         </nav>
     );
 }
