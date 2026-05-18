@@ -1,6 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { FaHospital } from "react-icons/fa";
+import { FcRating } from "react-icons/fc";
+import { MdLocationOn } from "react-icons/md";
+import { RiTimerFlashFill } from "react-icons/ri";
+import { TbCurrencyTaka } from "react-icons/tb";
+import { DocModal } from "./DocModal";
 
 const DoctorDetailsCard = ({ doctor, onBook }) => {
     if (!doctor) return null;
@@ -16,7 +22,7 @@ const DoctorDetailsCard = ({ doctor, onBook }) => {
                     <Image
                         src={doctor.image}
                         alt={doctor.name}
-                        width={250}
+                        width={800}
                         height={250}
                         className="rounded-xl object-cover"
                     />
@@ -29,20 +35,24 @@ const DoctorDetailsCard = ({ doctor, onBook }) => {
                         {doctor.name}
                     </h2>
 
+                    <p className="text-secondary font-medium flex gap-2 items-center">
+                        <FcRating /> {doctor.rating}
+                    </p>
+
                     <p className="text-secondary font-medium">
                         {doctor.specialty}
                     </p>
 
-                    <p className="text-gray-600">
-                        🏥 {doctor.hospital}
+                    <p className="text-gray-600 flex gap-2 items-center">
+                        <FaHospital /> {doctor.hospital}
                     </p>
 
-                    <p className="text-gray-600">
-                        📍 {doctor.location}
+                    <p className="text-gray-600 flex gap-2 items-center">
+                        <MdLocationOn /> {doctor.location}
                     </p>
 
-                    <p className="text-gray-600">
-                        ⏱ Experience: {doctor.experience}
+                    <p className="text-gray-600 flex gap-2 items-center">
+                        <RiTimerFlashFill /> Experience: {doctor.experience}
                     </p>
 
                     <p className="text-gray-700 leading-relaxed">
@@ -50,8 +60,8 @@ const DoctorDetailsCard = ({ doctor, onBook }) => {
                     </p>
 
                     <div className="flex items-center gap-4 mt-4">
-                        <span className="text-lg font-semibold text-primary">
-                            Fee: ৳{doctor.fee}
+                        <span className="flex gap-2 items-center text-lg font-semibold text-primary">
+                            Fee: <TbCurrencyTaka /> {doctor.fee}
                         </span>
                     </div>
 
@@ -74,14 +84,9 @@ const DoctorDetailsCard = ({ doctor, onBook }) => {
             </div>
 
             {/* Bottom CTA */}
-            <div className="border-t p-6 flex justify-center">
-                <button
-                    onClick={onBook}
-                    className="px-8 py-3 bg-primary text-white rounded-lg 
-          hover:bg-blue-700 transition-all duration-300 
-          transform hover:scale-105"
-                >
-                    Book Appointment
+            <div className=" py-2 flex justify-center">
+                <button>
+                    <DocModal />
                 </button>
             </div>
         </div>
