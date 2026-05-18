@@ -2,15 +2,23 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { authClient } from "@/lib/auth-client";
+import { Avatar } from "@heroui/react";
 
 export default function Navbar() {
-    const [user, setUser] = useState(null); // later replace with auth
 
-    const handleLogout = () => {
-        // TODO: logout logic
-        setUser(null);
-    };
+
+    const {
+        data: session,
+    } = authClient.useSession()
+
+    const user = session?.user;
+    // console.log("From navbar", user);
+
+
+    const handeleLogOut = async () => {
+        await authClient.signOut();
+    }
 
     return (
         <nav className="bg-white shadow-sm sticky top-0 z-50 border-b">
@@ -61,16 +69,14 @@ export default function Navbar() {
                             </Link>
                         </>
                     ) : (
+
                         <div className="flex items-center gap-3">
-                            <Image
-                                src={user?.photo || "/user.png"}
-                                alt="profile"
-                                width={36}
-                                height={36}
-                                className="rounded-full border"
-                            />
+                            <Avatar>
+                                <Avatar.Image alt="John Doe" src={user?.image} />
+                                <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
+                            </Avatar>
                             <button
-                                onClick={handleLogout}
+                                onClick={handeleLogOut}
                                 className="px-3 py-1.5 bg-red-500 text-white rounded hover:bg-red-600 transition"
                             >
                                 Logout
