@@ -9,13 +9,15 @@ const GlobalCard = ({ doc }) => {
         <Card
             className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-4"
         >
-            <Image
-                src={doc.image}
-                alt={doc.name}
-                width={500}
-                height={400}
-                className="w-full object-cover rounded-lg"
-            />
+            <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
+                <Image
+                    src={doc.image}
+                    alt={doc.name}
+                    className="object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+            </div>
 
             <div className="mt-4">
                 <h3 className="text-lg font-semibold text-gray-800">

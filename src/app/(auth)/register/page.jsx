@@ -4,11 +4,8 @@ import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, Separator, TextField } from "@heroui/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { use } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
-
-
 
 const SignUpPage = () => {
 
@@ -18,8 +15,6 @@ const SignUpPage = () => {
         const formData = new FormData(e.currentTarget);
         const user = Object.fromEntries(formData.entries());
 
-        console.log("data form ", user);
-
         const { data, error } = await authClient.signUp.email({
             name: user.name,
             email: user.email,
@@ -27,16 +22,14 @@ const SignUpPage = () => {
             image: user.image
         })
 
-
         if (data) {
+            toast.success('Successfully Sign Up');
             redirect('/');
-            toast.success('Sucessfuly signUp');
         }
 
         if (error) {
-            toast.error("Somthing Wrong");
+            toast.error("Something went wrong");
         }
-
     }
 
     const handleGoogleSignIn = async () => {
@@ -46,13 +39,24 @@ const SignUpPage = () => {
     }
 
     return (
-        <div className=" w-120 mx-auto border rounded-2xl shadow-2xl  mt-10">
-            <div className="text-center">
-                <h2 className="text-2xl font-bold my-3">Create Account</h2>
-                <p>Start your adventure with Health-Care</p>
+        <div className="w-110 mx-auto mt-10 border rounded-2xl 
+        shadow-xl hover:shadow-2xl transition-all duration-500 
+        animate-fadeIn overflow-hidden bg-white">
+
+            <div className="text-center p-4">
+                <h2 className="text-3xl font-bold my-3 text-primary">
+                    Create Account
+                </h2>
+                <p className="text-grayText">
+                    Start your journey with <span className="text-secondary font-semibold">Health Care</span>
+                </p>
             </div>
 
-            <Form onSubmit={onSubmit} className="flex justify-center w-96 flex-col gap-4 p-4" >
+            <Form
+                onSubmit={onSubmit}
+                className="flex justify-center w-96 flex-col gap-4 p-4 mx-auto animate-slideUp"
+            >
+
                 <TextField
                     isRequired
                     name="name"
@@ -64,9 +68,10 @@ const SignUpPage = () => {
                     }}
                 >
                     <Label>Name</Label>
-                    <Input placeholder=" John Doe" />
+                    <Input className="focus:ring-2 focus:ring-primary" placeholder="John Doe" />
                     <FieldError />
                 </TextField>
+
                 <TextField
                     isRequired
                     name="email"
@@ -79,17 +84,16 @@ const SignUpPage = () => {
                     }}
                 >
                     <Label>Email</Label>
-                    <Input placeholder="john@example.com" />
+                    <Input className="focus:ring-2 focus:ring-primary" placeholder="john@example.com" />
                     <FieldError />
                 </TextField>
-                <TextField
-                    isRequired
-                    name="image"
-                >
+
+                <TextField isRequired name="image">
                     <Label>Image</Label>
-                    <Input placeholder=" Image Url" />
+                    <Input className="focus:ring-2 focus:ring-primary" placeholder="Image URL" />
                     <FieldError />
                 </TextField>
+
                 <TextField
                     isRequired
                     minLength={8}
@@ -109,30 +113,49 @@ const SignUpPage = () => {
                     }}
                 >
                     <Label>Password</Label>
-                    <Input placeholder="Enter your password" />
-                    <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+                    <Input className="focus:ring-2 focus:ring-primary" placeholder="Enter your password" />
+                    <Description>
+                        Must be at least 8 characters with 1 uppercase and 1 number
+                    </Description>
                     <FieldError />
                 </TextField>
-                <div className=" flex justify-center">
-                    <Button className={'w-full bg-cyan-500'} type="submit">
+
+                <div className="flex justify-center">
+                    <Button
+                        className="w-full bg-primary hover:bg-blue-700 text-white 
+                        transition-all duration-300 transform hover:scale-105"
+                        type="submit"
+                    >
                         <Check />
                         Create Account
                     </Button>
                 </div>
             </Form>
-            <div className="flex justify-center items-center gap-3">
+
+            <div className="flex justify-center items-center gap-3 px-4">
                 <Separator />
-                <div className="whitespace-nowrap">Or</div>
+                <div className="whitespace-nowrap text-grayText">Or</div>
                 <Separator />
             </div>
 
-            <div className=" p-3">
-                <Button onClick={handleGoogleSignIn} className={'w-full flex justify-center items-center gap-3 bg-cyan-500'}>
+            <div className="p-3">
+                <Button
+                    onClick={handleGoogleSignIn}
+                    className="w-94 mx-auto flex justify-center items-center gap-3 
+                    bg-secondary hover:bg-green-600 text-white 
+                    transition-all duration-300 transform hover:scale-105"
+                >
                     <FcGoogle />
-                    SignUp With Google
+                    Sign Up With Google
                 </Button>
             </div>
-            <div className="py-3 flex justify-center items-center gap-3">Already have an account? <Link className="text-red-500" href={'login'}>Login</Link></div>
+
+            <div className="py-3 flex justify-center items-center gap-2 text-sm">
+                <span className="text-grayText">Already have an account?</span>
+                <Link className="text-primary hover:underline font-medium" href={'/login'}>
+                    Login
+                </Link>
+            </div>
         </div>
     );
 };
