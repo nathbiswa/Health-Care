@@ -6,8 +6,10 @@ import { authClient } from "@/lib/auth-client";
 import { Avatar } from "@heroui/react";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+    const pathname = usePathname();
 
     const { data: session } = authClient.useSession();
     const user = session?.user;
@@ -38,13 +40,16 @@ export default function Navbar() {
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-6 font-medium text-gray-700">
-                    <Link href="/" className="hover:text-primary transition">
+                    <Link href="/" className={`px-3 py-1 rounded transition ${pathname === "/" ? "bg-blue-100 text-primary" : "hover:text-primary"
+                        }`}>
                         Home
                     </Link>
-                    <Link href="/appointments" className="hover:text-primary transition">
+                    <Link href="/appointments" className={`px-3 py-1 rounded transition ${pathname === "/appointments" ? "bg-blue-100 text-primary" : "hover:text-primary"
+                        }`} >
                         All Appointment
                     </Link>
-                    <Link href="/dashboard" className="hover:text-primary transition">
+                    <Link href="/dashboard" className={`px-3 py-1 rounded transition ${pathname === "/dashboard" ? "bg-blue-100 text-primary" : "hover:text-primary"
+                        }`}>
                         Dashboard
                     </Link>
                 </div>

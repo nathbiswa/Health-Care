@@ -8,7 +8,7 @@ import { RiTimerFlashFill } from "react-icons/ri";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { DocModal } from "./DocModal";
 
-const DoctorDetailsCard = ({ doctor, onBook }) => {
+const DoctorDetailsCard = ({ doctor }) => {
     if (!doctor) return null;
 
     return (
@@ -85,9 +85,7 @@ const DoctorDetailsCard = ({ doctor, onBook }) => {
 
             {/* Bottom CTA */}
             <div className=" py-2 flex justify-center">
-                <button>
-                    <DocModal />
-                </button>
+                <DocModal doctor={doctor} />
             </div>
         </div>
     );

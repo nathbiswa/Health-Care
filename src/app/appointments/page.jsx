@@ -1,4 +1,4 @@
-import GlobalCard from "@/Components/GlobalCard";
+import SearchableDoctors from "@/components/SearchableDoctors";
 
 const allAppoinmentDocFetch = async () => {
     const res = await fetch('http://localhost:8000/doclist');
@@ -6,10 +6,9 @@ const allAppoinmentDocFetch = async () => {
     return data;
 }
 
-
 const AppoinmentPage = async () => {
     const doctors = await allAppoinmentDocFetch();
-    // console.log("From all doclist", doctors);
+
     return (
         <section className="py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6">
@@ -22,12 +21,8 @@ const AppoinmentPage = async () => {
                     </p>
                 </div>
 
+                <SearchableDoctors initialDoctors={doctors} />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-
-                    {doctors.map((doc) => <GlobalCard key={doc._id} doc={doc} />)}
-
-                </div>
             </div>
         </section>
     );
