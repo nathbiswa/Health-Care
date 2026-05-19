@@ -39,7 +39,7 @@ export default function SearchableDoctors({ initialDoctors }) {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-6">
+        <div >
 
             {/* INPUT FIXED */}
             <input
