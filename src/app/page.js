@@ -1,12 +1,16 @@
 import Hero from "@/Components/Hero";
+import HowItWorks from "@/Components/HowItWorks";
 import TopratedPage from "@/Components/Toprated";
-import Image from "next/image";
+import WhyChooseUs from "@/Components/WhyChooseUs";
+
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <TopratedPage />
+      <WhyChooseUs />
+      <HowItWorks />
     </div>
   );
 }

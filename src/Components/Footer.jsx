@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
@@ -8,9 +9,19 @@ export default function Footer() {
 
                 {/* About */}
                 <div>
-                    <h2 className="text-xl font-semibold text-white mb-4">
-                        Health Care
-                    </h2>
+                    <Link href="/" className="flex items-center gap-2">
+                        <Image
+                            src="/logo-footer.png"
+                            alt="DocAppoint"
+                            width={38}
+                            height={38}
+                            className="bg-[#1f2937] rounded-full"
+                        />
+                        <span className="text-xl font-bold">
+                            <span className="text-blue-600">Healt</span>
+                            <span className="text-secondary">Care</span>
+                        </span>
+                    </Link>
                     <p className="text-sm leading-6">
                         We provide trusted healthcare solutions with modern technology and expert doctors.
                         Your health is our top priority.

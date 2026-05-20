@@ -15,13 +15,15 @@ const TopratedPage = async () => {
     return (
         <section className="py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6">
+                <div className="w-full md:w-[500px] text-center mx-auto">
+                    <h2 className="text-sm md:text-3xl font-bold text-center text-gray-800 mb-10">
+                        Top Rated Doctors
+                    </h2>
+                    <p className="text-sm text-gray-500 md:text-md">
+                        Find the best doctors with top ratings, <br /> verified reviews, and proven expertise.
+                    </p>
+                </div>
 
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-                    Top Rated Doctors
-                </h2>
-                <p>
-
-                </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
 
