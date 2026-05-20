@@ -2,9 +2,11 @@
 
 import { authClient } from "@/lib/auth-client";
 import { Button, Select, Input, Label, ListBox, Modal, Surface, TextField, DateField, TimeField } from "@heroui/react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 
 export function DocModal({ doctor }) {
+    const [gender, setGender] = useState("");
 
     const { data: session } = authClient.useSession();
     const user = session?.user;
@@ -93,27 +95,28 @@ export function DocModal({ doctor }) {
                                     <div className="flex items-center gap-3">
 
                                         <Select
-                                            onSelectionChange={(val) => {
-                                                document.getElementById("genderInput").value = val;
+                                            selectedKeys={gender ? [gender] : []}
+                                            onSelectionChange={(keys) => {
+                                                const value = Array.from(keys)[0];
+                                                setGender(value);
                                             }}
                                             className="w-full"
                                         >
                                             <Label>Gender</Label>
 
-                                            <Select.Trigger className="rounded-2xl">
-                                                <Select.Value />
-                                                <Select.Indicator />
+                                            <Select.Trigger>
+                                                <Select.Value placeholder="Select Gender" />
                                             </Select.Trigger>
 
                                             <Select.Popover>
                                                 <ListBox>
-                                                    <ListBox.Item textValue="Male">Male</ListBox.Item>
-                                                    <ListBox.Item textValue="Female">Female</ListBox.Item>
+                                                    <ListBox.Item key="Male">Male</ListBox.Item>
+                                                    <ListBox.Item key="Female">Female</ListBox.Item>
                                                 </ListBox>
                                             </Select.Popover>
                                         </Select>
 
-                                        <input type="hidden" name="gender" id="genderInput" />
+                                        <input type="hidden" name="gender" value={gender} />
 
                                         <TextField name="phone">
                                             <Label>Phone</Label>
