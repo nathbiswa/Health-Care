@@ -8,7 +8,7 @@ const DocDetailsPage = async ({ params }) => {
     const { token } = await auth.api.getToken({
         headers: await headers() // you need to pass the headers object.
     });
-    console.log('token from details', token)
+    // console.log('token from details', token)
 
     const { id } = await params;
 

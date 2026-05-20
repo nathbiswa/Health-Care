@@ -13,6 +13,7 @@ export default function Dashboard() {
     // console.log("User:", user, session);
 
     const [bookings, setBookings] = useState([]);
+    console.log("Bookings:", bookings);
     const [activeTab, setActiveTab] = useState("booking");
     const [loading, setLoading] = useState(true);
 
@@ -159,6 +160,8 @@ export default function Dashboard() {
                                 <Card key={b._id} className="p-4">
                                     <h2 className="font-bold">{b.doctorName}</h2>
                                     <p>Patient: {b.patientName}</p>
+                                    <p>Email: {b.email}</p>
+                                    <p>Phone: {b.phone}</p>
                                     <p>Date: {b.date}</p>
                                     <p>Time: {b.time}</p>
 

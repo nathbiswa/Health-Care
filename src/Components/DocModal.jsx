@@ -27,6 +27,8 @@ export function DocModal({ doctor }) {
             createdAt: new Date().toISOString(),
         };
 
+        console.log("Booking Payload:", bookingPayload);
+
         try {
             const res = await fetch("https://appionment-server.vercel.app/booking", {
                 method: "POST",
@@ -110,8 +112,8 @@ export function DocModal({ doctor }) {
 
                                             <Select.Popover>
                                                 <ListBox>
-                                                    <ListBox.Item key="Male">Male</ListBox.Item>
-                                                    <ListBox.Item key="Female">Female</ListBox.Item>
+                                                    <ListBox.Item name="Male" key="Male">Male</ListBox.Item>
+                                                    <ListBox.Item name="Female" key="Female">Female</ListBox.Item>
                                                 </ListBox>
                                             </Select.Popover>
                                         </Select>
