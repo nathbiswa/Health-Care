@@ -3,7 +3,7 @@ import GlobalCard from "./GlobalCard";
 
 
 const allDoclistFetch = async () => {
-    const res = await fetch('http://localhost:8000/toprated');
+    const res = await fetch('https://appionment-server.vercel.app/toprated');
     const data = await res.json();
     return data;
 }

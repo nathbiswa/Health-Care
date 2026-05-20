@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function Dashboard() {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
-    console.log("User:", user, session);
+    // console.log("User:", user, session);
 
     const [bookings, setBookings] = useState([]);
     const [activeTab, setActiveTab] = useState("booking");
@@ -28,7 +28,7 @@ export default function Dashboard() {
         setName(user?.name || "");
         setImage(user?.image || "");
 
-        fetch(`http://localhost:8000/booking?email=${user?.email}`)
+        fetch(`https://appionment-server.vercel.app/booking?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setBookings(data);
@@ -57,7 +57,7 @@ export default function Dashboard() {
     // ================= DELETE BOOKING =================
     const handleDelete = async (id) => {
 
-        const res = await fetch(`http://localhost:8000/booking/${id}`, {
+        const res = await fetch(`https://appionment-server.vercel.app/booking/${id}`, {
             method: "DELETE",
         });
 
@@ -78,7 +78,7 @@ export default function Dashboard() {
 
         if (!date || !time) return;
 
-        const res = await fetch(`http://localhost:8000/booking/${id}`, {
+        const res = await fetch(`https://appionment-server.vercel.app/booking/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -101,7 +101,7 @@ export default function Dashboard() {
     // ================= PROFILE UPDATE =================
     const handleProfileUpdate = async () => {
         const res = await fetch(
-            `http://localhost:8000/users/${user.email}`,
+            `https://appionment-server.vercel.app/users/${user.email}`,
             {
                 method: "PUT",
                 headers: {

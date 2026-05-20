@@ -25,7 +25,7 @@ export default function SearchableDoctors({ initialDoctors }) {
             setLoading(true);
 
             const res = await fetch(
-                `http://localhost:8000/search?q=${searchText}`
+                `https://appionment-server.vercel.app/search?q=${searchText}`
             );
 
             const data = await res.json();

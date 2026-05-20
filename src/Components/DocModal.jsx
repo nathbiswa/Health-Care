@@ -28,7 +28,7 @@ export function DocModal({ doctor }) {
         };
 
         try {
-            const res = await fetch("http://localhost:8000/booking", {
+            const res = await fetch("https://appionment-server.vercel.app/booking", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export function DocModal({ doctor }) {
                 toast.error("Booking failed");
             }
 
-            console.log("Saved:", data);
+            // console.log("Saved:", data);
         } catch (error) {
             console.error(error);
             toast.error("Server error");
@@ -154,7 +154,7 @@ export function DocModal({ doctor }) {
                                         <Input placeholder="Brief reason for visit" />
                                     </TextField>
 
-                                    <Button type="submit" className="w-full">
+                                    <Button type="submit" slot="close" className="w-full">
                                         Confirm Booking
                                     </Button>
 

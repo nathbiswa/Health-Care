@@ -22,7 +22,7 @@ export default function Hero() {
                 <SwiperSlide>
                     <div className="h-full relative">
                         <Image
-                            src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5"
+                            src="https://i.ibb.co.com/KxCm7f4j/photo-1588776814546-1ffcf47267a5.jpg"
                             alt="doctor"
                             width={800}
                             height={600}
@@ -50,7 +50,7 @@ export default function Hero() {
                 <SwiperSlide>
                     <div className="h-full relative">
                         <Image
-                            src="https://images.unsplash.com/photo-1579154204601-01588f351e67"
+                            src="https://i.ibb.co.com/Y7rCDscN/photo-1579154204601-01588f351e67.jpg"
                             alt="hospital"
                             width={800}
                             height={600}
@@ -77,7 +77,7 @@ export default function Hero() {
                 <SwiperSlide>
                     <div className="h-full relative">
                         <Image
-                            src="https://images.unsplash.com/photo-1584515933487-779824d29309"
+                            src="https://i.ibb.co.com/392tZnTJ/photo-1584515933487-779824d29309.jpg"
                             alt="clinic"
                             width={800}
                             height={600}

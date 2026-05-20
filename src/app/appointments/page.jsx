@@ -1,7 +1,8 @@
-import SearchableDoctors from "@/components/SearchableDoctors";
+import SearchableDoctors from "@/Components/SearchableDoctors";
+
 
 const allAppoinmentDocFetch = async () => {
-    const res = await fetch('http://localhost:8000/doclist');
+    const res = await fetch('https://appionment-server.vercel.app/doclist');
     const data = await res.json();
     return data;
 }
