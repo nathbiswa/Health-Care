@@ -1,6 +1,6 @@
 import SearchableDoctors from "@/Components/SearchableDoctors";
 export const metadata = {
-    title: "Appointments - Book Appointments with Top Doctors",
+    title: "All Appointments - Book Appointments with Top Doctors",
 };
 
 const allAppoinmentDocFetch = async () => {

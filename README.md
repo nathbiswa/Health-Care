@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Project Name: 
+- Project Name:  HealthCare
 
-## Getting Started
+## Live side URL
+- https://appionment-client.vercel.app
 
-First, run the development server:
+## Server side URL
+- https://appionment-server.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Key Features of HealthCare Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 1. Doctor Appointment Booking System
+- Patients can easily book appointments with available doctors by selecting date, time, and reason — fast and simple.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# 2. Smart Scheduling
+- Real-time availability system that helps users avoid clashes and choose the best time slot instantly.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 3. User Dashboard
+- Each user gets a personal dashboard to:
+* View all bookings
+* Update or cancel appointments
+* Manage profile information
 
-## Learn More
+# 4. Secure Authentication
+- Safe login system for users and doctors to protect personal data and booking information.
 
-To learn more about Next.js, take a look at the following resources:
+# 5. Doctor Profiles
+- Detailed doctor profiles including:
+* Specialization
+* Availability
+* Experience
+* Consultation details
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 6. Notifications & Updates
+- Users receive updates for:
+* Booking confirmation
+* Schedule changes
+* Profile updates
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 7. Fully Responsive Design
+- Works perfectly on:
+* Mobile
+* Tablet
+* Desktop
