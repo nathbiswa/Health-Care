@@ -27,7 +27,7 @@ export function DocModal({ doctor }) {
             createdAt: new Date().toISOString(),
         };
 
-        console.log("Booking Payload:", bookingPayload);
+
 
         try {
             const res = await fetch("https://appionment-server.vercel.app/booking", {
@@ -46,7 +46,7 @@ export function DocModal({ doctor }) {
                 toast.error("Booking failed");
             }
 
-            // console.log("Saved:", data);
+
         } catch (error) {
             console.error(error);
             toast.error("Server error");

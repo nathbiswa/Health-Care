@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { TbCurrencyTaka } from 'react-icons/tb';
 
 const GlobalCard = ({ doc }) => {
-    // console.log("From doctor details", doc)
+
     return (
 
         <Card

@@ -11,7 +11,7 @@ const allDoclistFetch = async () => {
 
 const TopratedPage = async () => {
     const doctors = await allDoclistFetch();
-    // console.log("From all doclist", doctors);
+
     return (
         <section className="py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6">

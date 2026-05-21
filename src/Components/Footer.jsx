@@ -33,9 +33,8 @@ export default function Footer() {
                     <h2 className="text-lg font-semibold text-white mb-4">Quick Links</h2>
                     <ul className="space-y-2 text-sm">
                         <li><Link href="/" className="hover:text-white">Home</Link></li>
-                        <li><Link href="/services" className="hover:text-white">Services</Link></li>
-                        <li><Link href="/doctors" className="hover:text-white">Doctors</Link></li>
                         <li><Link href="/appointments" className="hover:text-white">Appointments</Link></li>
+                        <li><Link href="/dashboard" className="hover:text-white">Dashboard</Link></li>
                     </ul>
                 </div>
 
@@ -53,10 +52,10 @@ export default function Footer() {
                 <div>
                     <h2 className="text-lg font-semibold text-white mb-4">Follow Us</h2>
                     <div className="flex space-x-4">
-                        <a href="#" className="hover:text-white"><FaFacebookF /></a>
-                        <a href="#" className="hover:text-white"><FaTwitter /></a>
-                        <a href="#" className="hover:text-white"><FaInstagram /></a>
-                        <a href="#" className="hover:text-white"><FaLinkedinIn /></a>
+                        <a href="https://www.facebook.com/" target="blank" className="hover:text-white"><FaFacebookF /></a>
+                        <a href="https://twitter.com/" target="blank" className="hover:text-white"><FaTwitter /></a>
+                        <a href="https://www.instagram.com/" target="blank" className="hover:text-white"><FaInstagram /></a>
+                        <a href="https://www.linkedin.com/" target="blank" className="hover:text-white"><FaLinkedinIn /></a>
                     </div>
                 </div>
             </div>
