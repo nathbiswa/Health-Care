@@ -2,6 +2,9 @@
 import DoctorDetailsCard from "@/Components/DoctorDetailsCard";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
+export const metadata = {
+    title: "Doctor Details - Book Appointments with Top Doctors",
+};
 
 const DocDetailsPage = async ({ params }) => {
 

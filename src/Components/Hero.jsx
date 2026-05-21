@@ -32,10 +32,10 @@ export default function Hero() {
                         {/* overlay */}
                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                             <div className="text-center text-white px-6 animate-fadeIn">
-                                <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                                <h1 className="text-xl md:text-6xl font-bold mb-4">
                                     Your Health, Our Priority
                                 </h1>
-                                <p className="text-lg md:text-xl mb-6">
+                                <p className="text-sm md:text-xl mb-6">
                                     Book appointments with top doctors easily.
                                 </p>
                                 <button className="bg-primary px-6 py-2 rounded hover:bg-blue-700 transition">
@@ -59,10 +59,10 @@ export default function Hero() {
 
                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                             <div className="text-center text-white px-6 animate-fadeIn">
-                                <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                                <h1 className="text-xl md:text-6xl font-bold mb-4">
                                     Trusted Medical Experts
                                 </h1>
-                                <p className="text-lg md:text-xl mb-6">
+                                <p className="text-sm md:text-xl mb-6">
                                     Connect with experienced doctors anytime.
                                 </p>
                                 <button className="bg-secondary px-6 py-2 rounded hover:bg-green-600 transition">
@@ -86,10 +86,10 @@ export default function Hero() {
 
                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                             <div className="text-center text-white px-6 animate-fadeIn">
-                                <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                                <h1 className="text-xl md:text-6xl font-bold mb-4">
                                     Fast & Easy Booking
                                 </h1>
-                                <p className="text-lg md:text-xl mb-6">
+                                <p className="text-sm md:text-xl mb-6">
                                     Schedule appointments in seconds.
                                 </p>
                                 <button className="bg-primary px-6 py-2 rounded hover:bg-blue-700 transition">

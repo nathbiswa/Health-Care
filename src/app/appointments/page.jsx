@@ -1,5 +1,7 @@
 import SearchableDoctors from "@/Components/SearchableDoctors";
-
+export const metadata = {
+    title: "Appointments - Book Appointments with Top Doctors",
+};
 
 const allAppoinmentDocFetch = async () => {
     const res = await fetch('https://appionment-server.vercel.app/doclist');
@@ -15,7 +17,7 @@ const AppoinmentPage = async () => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="w-[300px] mx-auto">
                     <h2 className="text-3xl text-center font-bold text-gray-800 mb-10">
-                        All Appoinment
+                        All Appointments
                     </h2>
                     <p className="text-gray text-center">
                         Find the right doctor for your needs from our list of available appointments.

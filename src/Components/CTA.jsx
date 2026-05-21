@@ -17,13 +17,13 @@ export default function CTA() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold mb-4"
+                    className="text-md md:text-4xl font-bold mb-4"
                 >
                     Book Your Doctor Appointment Today
                 </motion.h2>
 
                 {/* Subtitle */}
-                <p className="text-white/80 max-w-xl mx-auto mb-8">
+                <p className="text-sm md:text-lg text-white/80 max-w-xl mx-auto mb-8">
                     Get fast, secure, and reliable healthcare support from top-rated doctors. Your health is one click away.
                 </p>
 
