@@ -6,7 +6,8 @@ import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import { ToastContainer } from "react-toastify";
 import BackToTop from '@/Components/BackToTop';
-import SmoothScrollProvider from '@/Components/SmoothScrollProvider';
+
+
 
 
 const geistSans = Geist({
@@ -32,9 +33,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
 
         <Navbar />
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+        {children}
         <ToastContainer />
         <BackToTop />
         <Footer />
