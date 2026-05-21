@@ -160,7 +160,7 @@ export default function Dashboard() {
 
                                         <Button
                                             size="sm"
-                                            color="danger"
+                                            variant='danger'
                                             onPress={() => handleDelete(b._id)}
                                         >
                                             Delete
