@@ -8,13 +8,16 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
+
+
 export default function Dashboard() {
+
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
     // console.log("User:", user, session);
 
     const [bookings, setBookings] = useState([]);
-    console.log("Bookings:", bookings);
+    // console.log("Bookings:", bookings);
     const [activeTab, setActiveTab] = useState("booking");
     const [loading, setLoading] = useState(true);
 
@@ -64,9 +67,9 @@ export default function Dashboard() {
         });
 
         if (res) {
-            // setBookings(bookings.filter((b) => b._id !== id));
-            toast.success("Booking deleted");
-            window.location.reload();
+            setBookings(bookings.filter((b) => b._id !== id));
+            toast.success("Booking deleted successfully");
+
         } else {
             toast.error("Delete failed ");
         }
@@ -159,19 +162,19 @@ export default function Dashboard() {
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {bookings.map((b) => (
                                 <Card key={b._id} className="p-4">
-                                    <h2 className="font-bold">{b.doctorName}</h2>
-                                    <p>Patient: {b.patientName}</p>
-                                    <p>Email: {b.email}</p>
-                                    <p>Phone: {b.phone}</p>
-                                    <p>Date: {b.date}</p>
-                                    <p>Time: {b.time}</p>
+                                    <h2 className="font-bold">{b?.doctorName}</h2>
+                                    <p>Patient: {b?.patientName}</p>
+                                    <p>Email: {b?.email}</p>
+                                    <p>Phone: {b?.phone}</p>
+                                    <p>Date: {b?.date}</p>
+                                    <p>Time: {b?.time}</p>
 
                                     <div className="flex gap-2 mt-3">
 
                                         <Button
                                             size="sm"
                                             color="danger"
-                                            onPress={() => handleDelete(b._id)}
+                                            onPress={() => handleDelete(b?._id)}
                                         >
                                             Delete
                                         </Button>
