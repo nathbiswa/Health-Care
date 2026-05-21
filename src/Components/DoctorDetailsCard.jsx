@@ -1,15 +1,17 @@
 "use client";
 
-import Image from "next/image";
+
 import { FaHospital } from "react-icons/fa";
 import { FcRating } from "react-icons/fc";
 import { MdLocationOn } from "react-icons/md";
 import { RiTimerFlashFill } from "react-icons/ri";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { DocModal } from "./DocModal";
+import Image from "next/image";
 
 const DoctorDetailsCard = ({ doctor }) => {
     if (!doctor) return null;
+    console.log("From doctor details", doctor)
 
     return (
         <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden border animate-fadeIn">
@@ -20,8 +22,8 @@ const DoctorDetailsCard = ({ doctor }) => {
                 {/* Image */}
                 <div className="flex justify-center">
                     <Image
-                        src={doctor.image}
-                        alt={doctor.name}
+                        src={doctor?.image}
+                        alt={doctor?.name}
                         width={800}
                         height={250}
                         className="rounded-xl object-cover"
@@ -32,36 +34,36 @@ const DoctorDetailsCard = ({ doctor }) => {
                 <div className="md:col-span-2 space-y-3">
 
                     <h2 className="text-3xl font-bold text-primary">
-                        {doctor.name}
+                        {doctor?.name}
                     </h2>
 
                     <p className="text-secondary font-medium flex gap-2 items-center">
-                        <FcRating /> {doctor.rating}
+                        <FcRating /> {doctor?.rating}
                     </p>
 
                     <p className="text-secondary font-medium">
-                        {doctor.specialty}
+                        {doctor?.specialty}
                     </p>
 
                     <p className="text-gray-600 flex gap-2 items-center">
-                        <FaHospital /> {doctor.hospital}
+                        <FaHospital /> {doctor?.hospital}
                     </p>
 
                     <p className="text-gray-600 flex gap-2 items-center">
-                        <MdLocationOn /> {doctor.location}
+                        <MdLocationOn /> {doctor?.location}
                     </p>
 
                     <p className="text-gray-600 flex gap-2 items-center">
-                        <RiTimerFlashFill /> Experience: {doctor.experience}
+                        <RiTimerFlashFill /> Experience: {doctor?.experience}
                     </p>
 
                     <p className="text-gray-700 leading-relaxed">
-                        {doctor.description}
+                        {doctor?.description}
                     </p>
 
                     <div className="flex items-center gap-4 mt-4">
                         <span className="flex gap-2 items-center text-lg font-semibold text-primary">
-                            Fee: <TbCurrencyTaka /> {doctor.fee}
+                            Fee: <TbCurrencyTaka /> {doctor?.fee}
                         </span>
                     </div>
 
@@ -69,7 +71,7 @@ const DoctorDetailsCard = ({ doctor }) => {
                     <div className="mt-3">
                         <h4 className="font-semibold mb-2">Available Time:</h4>
                         <div className="flex flex-wrap gap-2">
-                            {doctor.availability?.map((time, index) => (
+                            {doctor?.availability?.map((time, index) => (
                                 <span
                                     key={index}
                                     className="px-3 py-1 text-sm bg-secondary text-white rounded-full"
