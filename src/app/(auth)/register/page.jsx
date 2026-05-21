@@ -41,11 +41,11 @@ const SignUpPage = () => {
     return (
         <div className="w-110 mx-auto mt-10 border rounded-2xl 
         shadow-xl hover:shadow-2xl transition-all duration-500 
-        animate-fadeIn overflow-hidden bg-white">
+        animate-fadeIn overflow-hidden bg-white mb-10">
 
             <div className="text-center p-4">
                 <h2 className="text-3xl font-bold my-3 text-primary">
-                    Create Account
+                    Register
                 </h2>
                 <p className="text-grayText">
                     Start your journey with <span className="text-secondary font-semibold">Health Care</span>

@@ -39,11 +39,11 @@ const SignInPage = () => {
     return (
         <Card className="w-100 mx-auto mt-20 overflow-hidden 
         shadow-xl border border-gray-200 
-        transition-all duration-500 hover:shadow-2xl animate-fadeIn">
+        transition-all duration-500 hover:shadow-2xl animate-fadeIn mb-10">
 
             <div className="text-center p-4">
                 <h2 className="text-3xl font-bold my-3 text-primary">
-                    Welcome Back
+                    Login
                 </h2>
                 <p className="text-grayText">
                     Resume your journey with <span className="text-secondary font-semibold">Health Care</span>
