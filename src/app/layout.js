@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "HealthCare - Book Appointments with Top Doctors",
+  title: "HealthCare - HOME",
 };
 
 export default function RootLayout({ children }) {
