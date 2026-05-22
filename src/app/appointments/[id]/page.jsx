@@ -12,10 +12,7 @@ const DocDetailsPage = async ({ params }) => {
         headers: await headers() // you need to pass the headers object.
     });
 
-    console.log('token from details page', token)
-
     const { id } = await params;
-    console.log('id from details page', id)
 
     const res = await fetch(`https://appionment-server.vercel.app/doclist/${id}`, {
         headers: {
@@ -24,7 +21,7 @@ const DocDetailsPage = async ({ params }) => {
     });
 
     const doctor = await res.json();
-    console.log('from details', doctor)
+
 
     return (
         <div className="py-10 px-4">
